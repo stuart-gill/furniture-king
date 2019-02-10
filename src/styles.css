@@ -1,0 +1,94 @@
+body {
+  background-color: rgb(145, 208, 238);
+}
+header {
+  padding: 50px;
+  width: 100%;
+}
+
+h1 {
+  color: rgb(10, 10, 88);
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+#doctors {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+  margin: 20px;
+  overflow: auto;
+  padding: 100;
+  background-color: rgba(190, 223, 238, 0.582);
+  border-radius: 5px;
+  box-shadow: 10px 5px 5px #888888;
+}
+#main {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#submitButton {
+  margin-left: auto;
+  margin-right: auto;
+
+  /* display: inline; */
+}
+
+#randomButton {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(128, 63, 167);
+  border-color: rgb(128, 63, 167);
+  /* display: inline; */
+}
+li {
+  list-style: none;
+  margin: 10px;
+}
+li:hover {
+  color: #8e51f1;
+  text-decoration-line: underline;
+  text-decoration-color: #8e51f1;
+}
+li:first-letter {
+  color: #8e51f1;
+  font-family: Georgia;
+  initial-letter: 2;
+}
+#userForm {
+  margin-left: 50px;
+  float: left;
+  margin-top: 20px;
+}
+
+.form-control {
+  width: 200px;
+  display: inline;
+}
+.btn {
+  display: block;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-thumbnail {
+  margin-bottom: 20px;
+}
+
+#details {
+  /* display: none; */
+  padding: 10px;
+  background-color: rgb(193, 212, 252);
+  border-radius: 5px;
+}
+#description {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#actualFurnitureImage {
+  width: 100%;
+  border-radius: 10px;
+}
