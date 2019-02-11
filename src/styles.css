@@ -10,6 +10,12 @@ header {
   #header {
     display: none;
   }
+  p {
+    font-size: 3vw;
+  }
+  li {
+    font-size: 3vw;
+  }
 }
 
 h1 {
