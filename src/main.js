@@ -43,7 +43,7 @@ $(document).ready(function() {
           $("#details").append(
             `<li class=furnitureItem id=${body.body.data[i].id}>${
               body.body.data[i].name
-            }</li>`
+            }!</li>`
           );
         }
       }
@@ -69,9 +69,9 @@ $(document).ready(function() {
             deliverable = "Sorry, this item is not deliverable.";
           }
           $("#itemDetails").append(
-            `<p><em>the king presents to you...</em></p><p><strong>${
+            `<p><em>the king presents to you...</em></p><p  id=itemName>${
               body.body.data[i].name
-            }</strong></p>`
+            }</p>`
           );
           $("#itemDetails").append(`<p>${body.body.data[i].description}</p>`);
           $("#itemDetails").append(

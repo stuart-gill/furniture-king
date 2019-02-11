@@ -18,12 +18,27 @@ header {
   }
 }
 
-h1 {
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  font-family: "Bree Serif", serif;
+@media only screen and (min-width: 800px) {
+  li:first-letter {
+    font-family: Georgia;
+    font-size: 25px;
+  }
 }
+
+@media only screen and (min-width: 1080px) {
+  h2 {
+    font-size: 30px;
+  }
+  #itemName {
+    font-size: 30px;
+  }
+}
+
+#itemName {
+  font-size: 3vw;
+  font-weight: bolder;
+}
+
 h2 {
   width: 100%;
   font-size: 3vw;
@@ -54,10 +69,6 @@ li:hover {
   color: #71a394;
   text-decoration-line: underline;
   text-decoration-color: #71a394;
-}
-li:first-letter {
-  font-family: Georgia;
-  font-size: 25px;
 }
 
 #details {
