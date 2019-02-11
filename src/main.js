@@ -2,10 +2,10 @@ import { FurnitureSearch } from "./search";
 import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import doctors from "./images/doctors.png";
+import logo from "./images/furnitureking1.png";
 
-let docElement = document.getElementById("doctors");
-docElement.src = doctors;
+let logoElement = document.getElementById("logo");
+logoElement.src = logo;
 
 $(document).ready(function() {
   let newSearch = new FurnitureSearch();
@@ -15,8 +15,18 @@ $(document).ready(function() {
     let typeList = [];
     let body = JSON.parse(response);
 
+    function jsUcfirst(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     for (let i = 0; i < body.body.data.length; i++) {
+      //rewrite id with local id, since API ids are flawed
       body.body.data[i].id = i;
+
+      //uppercase types
+      body.body.data[i].type = jsUcfirst(body.body.data[i].type);
+
+      //push all unique types to a list of types
       if (!typeList.includes(body.body.data[i].type)) {
         typeList.push(body.body.data[i].type);
       }
@@ -51,25 +61,43 @@ $(document).ready(function() {
       id = parseInt(id);
       for (let i = 0; i < body.body.data.length; i++) {
         if (body.body.data[i].id === id) {
-          console.log("passed");
-          $("#itemDetails").append(`<p><em>${body.body.data[i].name}</em></p>`);
+          let deliverable;
+          let colors = body.body.data[i].colors.join(", ");
+          if (body.body.data[i].deliverable === true) {
+            deliverable = "This item is deliverable!";
+          } else {
+            deliverable = "Sorry, this item is not deliverable.";
+          }
+          $("#itemDetails").append(
+            `<p><em>the king presents to you...</em></p><p><strong>${
+              body.body.data[i].name
+            }</strong></p>`
+          );
           $("#itemDetails").append(`<p>${body.body.data[i].description}</p>`);
           $("#itemDetails").append(
-            `<p>Amazing deal! Only $${body.body.data[i].cost}</p>`
+            `<p>Available in the following colors: ${colors}</p>`
           );
+          $("#itemDetails").append(
+            `<p>Amazing deal! Only <strong>$${
+              body.body.data[i].cost
+            }</strong></p>`
+          );
+          if (body.body.data[i].dimensions) {
+            $("#itemDetails").append(
+              `<p>Dimensions: ${body.body.data[i].dimensions.width}"W x ${
+                body.body.data[i].dimensions.length
+              }"L</p>`
+            );
+          }
           $("#itemDetails").append(
             `<p>Quantity in stock:${body.body.data[i].stock}</p>`
           );
+          $("#itemDetails").append(`<p>${deliverable}</p>`);
           $("#itemPhoto").append(
             `<img src=${
               body.body.data[i].imageUrl
             } alt='itemPhoto' id='actualFurnitureImage'>`
           );
-          // $("#description".append(`${body.body.data[i].description}`));
-          // for (let j = 0; j < body.body.data[i].colors.length; j++) {
-          //   $("#colors".append(`${body.body.data[i].colors[j]}`));
-          // }
-          // $("#deliverable".append(`${body.body.data[i].deliverable}`));
         }
       }
     }
