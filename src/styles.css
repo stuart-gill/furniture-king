@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(145, 208, 238);
+  background-color: #71a394;
 }
 header {
   padding: 50px;
@@ -35,7 +35,7 @@ h2 {
   margin: 20px;
   overflow: auto;
   padding: 100;
-  background-color: rgba(190, 223, 238, 0.582);
+  background-color: whitesmoke;
   border-radius: 5px;
   box-shadow: 10px 5px 5px #888888;
 }
@@ -51,9 +51,9 @@ li {
   font-weight: bolder;
 }
 li:hover {
-  color: #8e51f1;
+  color: #71a394;
   text-decoration-line: underline;
-  text-decoration-color: #8e51f1;
+  text-decoration-color: #71a394;
 }
 li:first-letter {
   font-family: Georgia;
